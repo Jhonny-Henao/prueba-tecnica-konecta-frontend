@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend - Sistema de Ventas Financieras
 
-## Getting Started
+Frontend desarrollado con Next.js 14, React y Tailwind CSS para gestionar ventas de productos financieros.
 
-First, run the development server:
+## 📦 Archivos Creados
 
+### ✅ Ya tienes implementado:
+- `app/login/page.jsx` - Página de login
+- `components/` - Componentes (Button, Card, Input, Select)
+- `api/` - Servicios API (auth, sales, stats, users)
+- `store/authStore.js` - Estado global de autenticación
+- `utils/format.js` y `utils/axios.js` - Utilidades
+
+### ✅ Archivos que acabo de crear:
+
+#### Core
+- `middleware.js` - Protección de rutas
+- `app/layout.jsx` - Layout principal
+- `app/page.jsx` - Página de inicio (redirect)
+
+#### Dashboard
+- `app/dashboard/layout.jsx` - Layout con navbar
+- `app/dashboard/page.jsx` - Dashboard principal
+
+#### Ventas
+- `app/sales/page.jsx` - Listado de ventas
+- `app/sales/new/page.jsx` - Nueva venta
+- `app/sales/[id]/page.jsx` - Detalle y edición de venta
+
+#### Usuarios (Admin)
+- `app/users/page.jsx` - Listado de usuarios
+- `app/users/new/page.jsx` - Nuevo usuario
+- `app/users/[id]/page.jsx` - Detalle y edición de usuario
+
+#### Estadísticas (Admin PLUS)
+- `app/stats/page.jsx` - Dashboard de estadísticas
+
+## 🚀 Instalación y Configuración
+
+### 1. Instalar dependencias
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+# o
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configurar variables de entorno
+Crear archivo `.env.local`:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Iniciar servidor de desarrollo
+```bash
+npm run dev
+# o
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+El frontend estará disponible en: `http://localhost:3000`
 
-## Learn More
+## 📋 Dependencias Necesarias
 
-To learn more about Next.js, take a look at the following resources:
+Asegúrate de tener estas dependencias en tu `package.json`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "axios": "^1.6.0",
+    "js-cookie": "^3.0.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Instalar dependencias faltantes:
+```bash
+npm install axios js-cookie
+```
 
-## Deploy on Vercel
+## 🎨 Configuración de Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ya debes tener configurado Tailwind. Verifica que tengas estos archivos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**tailwind.config.js:**
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**app/globals.css:**
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## 📁 Estructura del Proyecto
+
+```
+frontend/
+├── app/
+│   ├── dashboard/
+│   │   ├── layout.jsx         ✅ CREADO
+│   │   └── page.jsx           ✅ CREADO
+│   ├── login/
+│   │   └── page.jsx           ✅ YA EXISTÍA
+│   ├── sales/
+│   │   ├── [id]/
+│   │   │   └── page.jsx       ✅ CREADO
+│   │   ├── new/
+│   │   │   └── page.jsx       ✅ CREADO
+│   │   └── page.jsx           ✅ CREADO
+│   ├── users/
+│   │   ├── [id]/
+│   │   │   └── page.jsx       ✅ CREADO
+│   │   ├── new/
+│   │   │   └── page.jsx       ✅ CREADO
+│   │   └── page.jsx           ✅ CREADO
+│   ├── stats/
+│   │   └── page.jsx           ✅ CREADO
+│   ├── layout.jsx             ✅ CREADO
+│   ├── page.jsx               ✅ CREADO
+│   └── globals.css            ✅ YA EXISTÍA
+├── components/
+│
