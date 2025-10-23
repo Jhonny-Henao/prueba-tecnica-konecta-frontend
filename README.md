@@ -121,7 +121,7 @@ frontend/
 │   │   ├── layout.jsx         ✅ CREADO
 │   │   └── page.jsx           ✅ CREADO
 │   ├── login/
-│   │   └── page.jsx           ✅ YA EXISTÍA
+│   │   └── page.jsx           ✅ CREADO
 │   ├── sales/
 │   │   ├── [id]/
 │   │   │   └── page.jsx       ✅ CREADO
@@ -138,6 +138,6 @@ frontend/
 │   │   └── page.jsx           ✅ CREADO
 │   ├── layout.jsx             ✅ CREADO
 │   ├── page.jsx               ✅ CREADO
-│   └── globals.css            ✅ YA EXISTÍA
+│   └── globals.css            ✅ CREADO
 ├── components/
 │
